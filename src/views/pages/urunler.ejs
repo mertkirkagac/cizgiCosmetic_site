@@ -1,0 +1,47 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="hero-kicker">Ürün Grupları</p>
+    <h1>Beş ana grupta<br><em>yüzlerce formül.</em></h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="photo-duo">
+      <figure class="media-frame">
+        <img src="/img/photos/kozmetik-siseler.jpg" alt="Kozmetik ambalaj ve şişe örnekleri" loading="lazy">
+        <figcaption>Kişisel bakım & kozmetik formülasyonları</figcaption>
+      </figure>
+      <figure class="media-frame">
+        <img src="/img/photos/ev-bakim.jpg" alt="Ev bakım sprey ürünü" loading="lazy">
+        <figcaption>Ev bakım & temizlik spreyleri</figcaption>
+      </figure>
+    </div>
+    <div class="cards-2 cat-cards">
+      <% categories.forEach((c, i) => { %>
+      <a href="/urunler/<%= c.slug %>" class="cat-card reveal" style="--d:<%= i * 80 %>ms">
+        <span class="cat-no">0<%= i + 1 %></span>
+        <h3><%= c.name %></h3>
+        <p><%= c.short %></p>
+        <ul>
+          <% c.items.slice(0, 3).forEach(item => { %><li><%= item %></li><% }) %>
+        </ul>
+        <span class="cat-arrow" aria-hidden="true">Detaylı İncele →</span>
+      </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta-inner">
+    <h2>Aradığınız ürün listede yok mu?</h2>
+    <p>Portföyümüz burada yazandan geniştir — özel formül taleplerinizi de geliştiriyoruz.</p>
+    <a href="/iletisim" class="btn btn-primary btn-lg">Bize Sorun</a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

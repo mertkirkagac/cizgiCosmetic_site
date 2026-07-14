@@ -1,0 +1,46 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <path d="M 96 85.3 A 44 44 0 0 1 41.4 99.9" stroke="#2ab5a5" stroke-width="24"/>
+        <path d="M 34.8 96 A 44 44 0 0 1 20.1 41.4" stroke="#5fd0bf" stroke-width="24"/>
+        <path d="M 24 34.8 A 44 44 0 0 1 78.6 20.1" stroke="#8fe3d3" stroke-width="24"/>
+        <path d="M 85.3 24 A 44 44 0 0 1 103.3 52.3" stroke="#c2f0e6" stroke-width="24"/>
+      </svg>
+      <p class="footer-slogan">Balıkesir'den Türkiye'ye ve dünyaya —<br>her püskürtmede aynı çizgi.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Site haritası">
+      <h4>Site Haritası</h4>
+      <a href="/kurumsal">Kurumsal</a>
+      <a href="/uretim">Üretim & Tesis</a>
+      <a href="/urunler">Ürün Grupları</a>
+      <a href="/kalite">Kalite & Sertifikalar</a>
+      <a href="/iletisim">İletişim</a>
+    </nav>
+
+    <div class="footer-col">
+      <h4>İletişim</h4>
+      <a href="tel:<%= site.phoneHref %>"><%= site.phone %></a>
+      <a href="mailto:<%= site.email %>"><%= site.email %></a>
+      <p><%= site.address %></p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Çalışma Saatleri</h4>
+      <p>Pazartesi – Cumartesi<br>08:30 – 18:00</p>
+      <a href="/iletisim" class="btn btn-outline-light">Teklif Alın</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© <%= year %> <%= site.name %>. Tüm hakları saklıdır.</span>
+      <span>Aerosol Dolum & Fason Üretim — Balıkesir</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>

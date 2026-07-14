@@ -1,0 +1,32 @@
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="/" class="brand brand-chip" aria-label="Çizgi Cosmetic anasayfa">
+      <span class="brand-lockup">
+        <svg class="brand-mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <path d="M 96 85.3 A 44 44 0 0 1 41.4 99.9" stroke="#0e6e62" stroke-width="24"/>
+          <path d="M 34.8 96 A 44 44 0 0 1 20.1 41.4" stroke="#1d9c8c" stroke-width="24"/>
+          <path d="M 24 34.8 A 44 44 0 0 1 78.6 20.1" stroke="#2ab5a5" stroke-width="24"/>
+          <path d="M 85.3 24 A 44 44 0 0 1 103.3 52.3" stroke="#63cdbd" stroke-width="24"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">ÇİZGİ</span>
+          <span class="brand-sub">cosmetic</span>
+        </span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Ana menü">
+      <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Anasayfa</a>
+      <a href="/kurumsal" class="<%= currentPath === '/kurumsal' ? 'active' : '' %>">Kurumsal</a>
+      <a href="/uretim" class="<%= currentPath === '/uretim' ? 'active' : '' %>">Üretim</a>
+      <a href="/urunler" class="<%= currentPath.startsWith('/urunler') ? 'active' : '' %>">Ürün Grupları</a>
+      <a href="/kalite" class="<%= currentPath === '/kalite' ? 'active' : '' %>">Kalite</a>
+      <a href="/iletisim" class="<%= currentPath === '/iletisim' ? 'active' : '' %>">İletişim</a>
+      <a href="/iletisim" class="btn btn-nav">Teklif Alın</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

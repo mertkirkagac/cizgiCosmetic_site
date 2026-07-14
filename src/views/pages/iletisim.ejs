@@ -1,0 +1,66 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="hero-kicker">İletişim</p>
+    <h1>Bir numuneyle<br><em>başlayalım.</em></h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2>Çizgi Cosmetic</h2>
+      <p class="lede"><%= site.address %></p>
+      <div class="contact-lines">
+        <a href="tel:<%= site.phoneHref %>"><span>Telefon</span><%= site.phone %></a>
+        <a href="https://wa.me/<%= site.whatsappHref %>" rel="noopener"><span>WhatsApp</span><%= site.whatsapp %></a>
+        <a href="mailto:<%= site.email %>"><span>E-posta</span><%= site.email %></a>
+      </div>
+      <p class="note">Numune talepleri için ürün grubu, hedef hacim (ml) ve yıllık adet öngörünüzü mesajınıza eklemeniz süreci hızlandırır.</p>
+      <figure class="media-frame">
+        <img src="/img/photos/ofis.jpg" alt="Çizgi Cosmetic ofis alanı" loading="lazy">
+      </figure>
+    </div>
+
+    <div class="contact-form-wrap">
+      <% if (sent) { %>
+        <div class="form-success" role="status">
+          <h3>Mesajınız alındı ✓</h3>
+          <p>En geç bir iş günü içinde size dönüş yapacağız. Teşekkürler!</p>
+        </div>
+      <% } else { %>
+        <% if (errors.length) { %>
+          <div class="form-errors" role="alert">
+            <ul><% errors.forEach(e => { %><li><%= e %></li><% }) %></ul>
+          </div>
+        <% } %>
+        <form method="POST" action="/iletisim" class="contact-form" novalidate>
+          <div class="form-row">
+            <label>Ad Soyad *
+              <input type="text" name="name" value="<%= form.name || '' %>" required maxlength="100" autocomplete="name">
+            </label>
+            <label>Firma
+              <input type="text" name="company" value="<%= form.company || '' %>" maxlength="100" autocomplete="organization">
+            </label>
+          </div>
+          <div class="form-row">
+            <label>E-posta *
+              <input type="email" name="email" value="<%= form.email || '' %>" required maxlength="150" autocomplete="email">
+            </label>
+            <label>Telefon
+              <input type="tel" name="phone" value="<%= form.phone || '' %>" maxlength="30" autocomplete="tel">
+            </label>
+          </div>
+          <label>Mesajınız *
+            <textarea name="message" rows="6" required maxlength="2000" placeholder="Ürün grubu, hacim ve yıllık adet öngörünüzü paylaşabilirsiniz."><%= form.message || '' %></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary btn-lg">Gönder</button>
+        </form>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,52 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="hero-kicker"><a href="/urunler" class="crumb">Ürün Grupları</a> / <%= category.name %></p>
+    <h1><em><%= category.name %></em></h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-label">
+      <span class="section-no">01</span>
+      <h2>Grup hakkında</h2>
+      <figure class="media-frame">
+        <img src="/img/photos/kalite-pipet.jpg" alt="Laboratuvarda formülasyon çalışması" loading="lazy">
+      </figure>
+    </div>
+    <div class="split-body">
+      <p class="lede"><%= category.description %></p>
+      <h3 class="list-title">Bu grupta ürettiklerimiz</h3>
+      <ul class="check-list">
+        <% category.items.forEach(item => { %><li><%= item %></li><% }) %>
+      </ul>
+      <div class="hero-actions">
+        <a href="/iletisim" class="btn btn-primary">Bu Grup İçin Teklif Alın</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-no">02</span>
+      <h2>Diğer gruplar</h2>
+    </div>
+    <div class="cat-list">
+      <% categories.filter(c => c.slug !== category.slug).forEach((c, i) => { %>
+      <a href="/urunler/<%= c.slug %>" class="cat-row reveal" style="--d:<%= i * 70 %>ms">
+        <span class="cat-no">→</span>
+        <span class="cat-name"><%= c.name %></span>
+        <span class="cat-short"><%= c.short %></span>
+        <span class="cat-arrow" aria-hidden="true">→</span>
+      </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

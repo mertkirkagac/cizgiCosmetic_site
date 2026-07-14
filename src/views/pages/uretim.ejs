@@ -1,0 +1,90 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="hero-kicker">Üretim & Tesis</p>
+    <h1>Otomasyondan geçen<br><em>her kutu, kontrolden geçer.</em></h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-label">
+      <span class="section-no">01</span>
+      <h2>Tesisimiz</h2>
+      <figure class="media-frame">
+        <img src="/img/photos/depo-dikey.jpg" alt="Yüksek raflı mamul depo alanı" loading="lazy">
+      </figure>
+    </div>
+    <div class="split-body">
+      <p class="lede">
+        Balıkesir OSB'deki tesisimiz; karışım hazırlama, dolum, gaz basma,
+        ağırlık kontrolü, sızdırmazlık testi ve ambalajlama hatlarını tek
+        akış üzerinde birleştirir.
+      </p>
+      <p>
+        Otomatik dolum hatlarımız 45 ml'den 750 ml'ye kadar teneke ve alüminyum
+        kutularda çalışır. Her hat üzerinde çevrim içi ağırlık kontrolü ve su
+        banyosu sızdırmazlık testi bulunur; spesifikasyon dışı hiçbir kutu hattı
+        terk edemez.
+      </p>
+      <div class="stats">
+        <div class="stat reveal"><b data-count="3">0</b><span>Otomatik<br>dolum hattı</span></div>
+        <div class="stat reveal"><b data-count="80">0</b><span>Kutu / dakika<br>hat hızı</span></div>
+        <div class="stat reveal"><b data-count="6000">0</b><span>m² kapalı<br>üretim alanı</span></div>
+        <div class="stat reveal"><b data-count="100">0</b><span>% sızdırmazlık<br>testi</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-no">02</span>
+      <h2>Hizmet modelimiz</h2>
+    </div>
+    <div class="cards-4">
+      <% services.forEach((s, i) => { %>
+      <article class="service-card reveal" style="--d:<%= i * 90 %>ms">
+        <span class="service-index">0<%= i + 1 %></span>
+        <h3><%= s.title %></h3>
+        <p><%= s.text %></p>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" style="background-image: url('/img/photos/depo-sevkiyat.jpg')" aria-label="Depolama ve sevkiyat">
+  <div class="container">
+    <p class="hero-kicker">Depolama & Sevkiyat</p>
+    <h3>ADR uyumlu depolama, palet düzeninde sevkiyata hazır teslimat.</h3>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-no">03</span>
+      <h2>Üretim akışı</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><b>Karışım Hazırlama</b><p>Paslanmaz reaktörlerde, reçeteye tam sadakatle konsantre hazırlığı.</p></li>
+      <li class="reveal"><b>Dolum & Gaz Basma</b><p>Konsantre dolumu ardından itici gaz enjeksiyonu; LPG, DME ve azot seçenekleri.</p></li>
+      <li class="reveal"><b>Kontrol</b><p>Ağırlık, basınç ve su banyosu sızdırmazlık kontrolü — kutu bazında, %100.</p></li>
+      <li class="reveal"><b>Aktüatör & Ambalaj</b><p>Başlık takma, kapak, etiket, shrink ve koli; palet düzeninde sevkiyata hazır.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta-inner">
+    <h2>Kapasitemizi sizin için ayıralım.</h2>
+    <p>Yıllık üretim planınızı paylaşın, size özel hat ve termin planı çıkaralım.</p>
+    <a href="/iletisim" class="btn btn-primary btn-lg">Üretim Planı Talep Edin</a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
