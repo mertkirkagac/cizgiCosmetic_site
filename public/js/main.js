@@ -21,12 +21,14 @@
 
   /* ---------- 1b. Orijinal logo dosyası varsa onu kullan ----------
      public/img/logo.png eklendiğinde SVG yerine otomatik o gösterilir. */
-  fetch('/img/logo.png', { method: 'HEAD' })
+  var scriptUrl = document.currentScript ? document.currentScript.src : window.location.href;
+  var logoUrl = new URL('../img/logo.png', scriptUrl).pathname;
+  fetch(logoUrl, { method: 'HEAD' })
     .then(function (r) {
       if (!r.ok) return;
       document.querySelectorAll('.brand-lockup').forEach(function (el) {
         var img = document.createElement('img');
-        img.src = '/img/logo.png';
+        img.src = logoUrl;
         img.alt = 'Çizgi Cosmetic';
         img.className = 'brand-logo-img';
         el.replaceWith(img);
